@@ -3,7 +3,7 @@ using System.Collections.Concurrent;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 
-namespace ConcurrentCollectionsBenchmarks;
+namespace ConcurrentCollectionsBenchmarks.Collections;
 
 public sealed class MpscQueue<T> : IProducerConsumerCollection<T>
 {

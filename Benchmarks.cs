@@ -1,6 +1,7 @@
 using System.Runtime.CompilerServices;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Configs;
+using ConcurrentCollectionsBenchmarks.Collections;
 
 namespace ConcurrentCollectionsBenchmarks;
 

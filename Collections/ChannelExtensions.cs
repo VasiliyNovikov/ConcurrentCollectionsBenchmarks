@@ -1,7 +1,7 @@
 using System.Runtime.CompilerServices;
 using System.Threading.Channels;
 
-namespace ConcurrentCollectionsBenchmarks;
+namespace ConcurrentCollectionsBenchmarks.Collections;
 
 public static class ChannelExtensions
 {
