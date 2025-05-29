@@ -1,13 +1,14 @@
 using System.Runtime.CompilerServices;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Configs;
+using BenchmarkDotNet.Engines;
 using ConcurrentCollectionsBenchmarks.Collections;
 
 namespace ConcurrentCollectionsBenchmarks;
 
 [MemoryDiagnoser]
-[ShortRunJob]
 [GroupBenchmarksBy(BenchmarkLogicalGroupRule.ByCategory)]
+[SimpleJob(RunStrategy.Throughput, warmupCount:10, iterationCount:100, invocationCount:1)]
 public class Benchmarks
 {
     private const int TestItemCount = 10000;
@@ -71,7 +72,7 @@ public class Benchmarks
     [BenchmarkCategory("Enqueue")]
     public void ConcurrentBag_Enqueue() => Enqueue(_concurrentBag);
 
-    [IterationCleanup(Target = nameof(ConcurrentQueue_Enqueue))]
+    [IterationCleanup(Target = nameof(ConcurrentBag_Enqueue))]
     public void ConcurrentBag_Enqueue_Cleanup() => Enqueue_Cleanup(_concurrentBag);
 
     [Benchmark]
